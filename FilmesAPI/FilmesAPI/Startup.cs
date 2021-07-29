@@ -1,7 +1,9 @@
+using FilmesAPI.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,7 +28,11 @@ namespace FilmesAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            // Define configuracao de inicializacao para conexao com o banco
+            //AddDbContext<FilmeContext>  Adiciona um contexto de banco de dados "filme Context"
+            // opts => opts opcoes de configuracao
+            //UseMySQL(Configuration.GetConnectionString("FilmeConnection") passa a string de conexao definida no appsettings.json
+            services.AddDbContext<FilmeContext>(opts => opts.UseMySQL(Configuration.GetConnectionString("FilmeConnection"))); 
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
