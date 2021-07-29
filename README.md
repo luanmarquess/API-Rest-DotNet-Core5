@@ -14,6 +14,6 @@
 - select * from filmes;
 
 ## Pacotes NuGet
-- Microsoft.EntityFrameworkCore
-- Microsoft.EntityFrameworkCore.Tools
-- Mysql.EntityFrameworkCore
+- Microsoft.EntityFrameworkCore;
+- Microsoft.EntityFrameworkCore.Tools;
+- Mysql.EntityFrameworkCore;
