@@ -5,7 +5,7 @@
 - Persistir dados em um banco com DbContext;
 - Modelar um objeto para o BD;
 - [Key] campo primario de identificacao;
-- Retornar informações nao armazenadas no banco em tempo de execução;
+- Retornar informações nao armazenadas no banco em tempo de execução.
 
 ## Connection
 - Console Gerenciador de Pacotes
@@ -15,7 +15,7 @@
 ##  Workbench
 - use filmedb;
 - show tables;
-- desc filmes; "exibe a tabela filmes"
+- desc filmes; "exibe a tabela filmes";
 - select * from filmes.
 
 ## Pacotes NuGet
