@@ -1,4 +1,4 @@
-# API_Rest_DotNet_Core5
+# API Rest DotNet Core5
 - Criar controller;
 - Declarar e utilizar anotacoes;
 - Como receber requisicoes GET, POST, PUT, DELETE;
