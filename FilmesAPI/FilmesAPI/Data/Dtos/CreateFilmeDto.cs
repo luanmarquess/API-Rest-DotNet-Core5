@@ -4,18 +4,17 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FilmesAPI.Models
+namespace FilmesAPI.Data.Dtos
 {
-    public class Filme
+    public class CreateFilmeDto
     {
-        [Key] // identificacao para BD 
-        [Required]// identificacao para BD
-        public int Id { get; set; }
+        // Dto data transfer object == criar classe responsaveis por transferir os dados dentro do sistema
+        // permite criar objetos que nao necessariamente devem ser armazenados no banco. EX: DateTime e exibido na requisicao get
 
-        [Required (ErrorMessage = "O campo Titulo e obrigatorio")] // torna campo obrigatorio e retorna 400 bad request caso esteja vazio
+        [Required(ErrorMessage = "O campo Titulo e obrigatorio")] // torna campo obrigatorio e retorna 400 bad request caso esteja vazio
         public string Titulo { get; set; }
 
-        [Required (ErrorMessage = "O campo Diretor e obrigatorio")]
+        [Required(ErrorMessage = "O campo Diretor e obrigatorio")]
         public string Diretor { get; set; }
 
         [StringLength(30, ErrorMessage = "O campo Genero deve ter no maximo 30 caracteres")]

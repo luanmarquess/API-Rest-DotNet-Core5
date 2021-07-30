@@ -4,18 +4,20 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FilmesAPI.Models
+namespace FilmesAPI.Data.Dtos
 {
-    public class Filme
+    public class ReadFilmeDto
     {
+        // Dto data transfer object == criar classe responsaveis por transferir os dados dentro do sistema
+
         [Key] // identificacao para BD 
         [Required]// identificacao para BD
         public int Id { get; set; }
 
-        [Required (ErrorMessage = "O campo Titulo e obrigatorio")] // torna campo obrigatorio e retorna 400 bad request caso esteja vazio
+        [Required(ErrorMessage = "O campo Titulo e obrigatorio")] // torna campo obrigatorio e retorna 400 bad request caso esteja vazio
         public string Titulo { get; set; }
 
-        [Required (ErrorMessage = "O campo Diretor e obrigatorio")]
+        [Required(ErrorMessage = "O campo Diretor e obrigatorio")]
         public string Diretor { get; set; }
 
         [StringLength(30, ErrorMessage = "O campo Genero deve ter no maximo 30 caracteres")]
@@ -23,5 +25,6 @@ namespace FilmesAPI.Models
 
         [Range(1, 600, ErrorMessage = "Duracao deve ter no minimo 1 e no maximo 600 min")]
         public int Duracao { get; set; }
+        public DateTime HoraDaConsulta { get; set; }
     }
 }
